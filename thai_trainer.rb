@@ -1,4 +1,9 @@
 require 'io/console'
+first_consonants = "กขฃคฅฆงจฉชซ"
+second_consonants = ""
+third_consonants = ""
+fourth_consonants = ""
+
 
 def print_letters
    return "กขฃคฅฆงจฉชซ"
