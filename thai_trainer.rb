@@ -3,7 +3,8 @@ require 'io/console'
 @second_consonants = "ฌญฎฏฐฑฒณดตถ"
 @third_consonants = "ทธนบปผฝพฟภม"
 @fourth_consonants = "ยรลวศษสหฬอฮ"
-
+@first_vowels = "ะาเแ ิ ี ุ ู"
+@tones = " ่ ้ ็ ๊ ๋ ํ ์"
 
 def print_letters(letter_set)
    return letter_set
