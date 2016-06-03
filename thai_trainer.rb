@@ -16,12 +16,14 @@ def start
   input = STDIN.getch
   while( input != "q") do
     if(input != letters_arr[rand_letter_index])
-      	
+        puts input     	
         puts "incorrect"
         puts letters_arr[rand_letter_index]
     else
+	puts input 
+	puts "correct"
         rand_letter_index = rand(letters_arr.size)
-       puts letters_arr[rand_letter_index]
+        puts letters_arr[rand_letter_index]
     end
     input = STDIN.getch
   end
