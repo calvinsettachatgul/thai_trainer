@@ -3,6 +3,7 @@ require 'io/console'
 @second_consonants = "ฌญฎฏฐฑฒณดตถ"
 @third_consonants = "ทธนบปผฝพฟภม"
 @fourth_consonants = "ยรลวศษสหฬอฮ"
+@remaining = @second_consonants + @third_consonants + @fourth_consonants
 @first_vowels = "ะาเแ ิ ี ุ ู"
 @tones = " ่ ้ ๊ ๋ ็ ํ ์"
 
@@ -33,6 +34,7 @@ def start
   end
 end
 
+p remaining_arr = print_letters(@remaining).split("")
 puts print_letters(@first_consonants)
 
 start
