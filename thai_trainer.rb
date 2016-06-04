@@ -3,12 +3,18 @@ require 'io/console'
 @second_consonants = "ฌญฎฏฐฑฒณดตถ"
 @third_consonants = "ทธนบปผฝพฟภม"
 @fourth_consonants = "ยรลวศษสหฬอฮ"
-@remaining = @second_consonants + @third_consonants + @fourth_consonants
+@all_consonants = [@first_consonants, @second_consonants, @third_consonants, @fourth_consonants]
 @first_vowels = "ะาเแ ิ ี ุ ู"
 @tones = " ่ ้ ๊ ๋ ็ ํ ์"
 
 def print_letters(letter_set)
    return letter_set
+end
+
+def advance_letter_set(streak)
+
+   return @all_letters[ streak % 4 ]
+   
 end
 
 def start
