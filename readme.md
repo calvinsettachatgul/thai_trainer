@@ -2,6 +2,6 @@
 
 #### thai_trainer.rb is a command line thai typing tool
 #### on the command line run:
-#### > ruby thai_trainer.rb
+> ruby thai_trainer.rb
 
 
