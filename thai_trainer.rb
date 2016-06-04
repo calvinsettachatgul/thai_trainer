@@ -18,6 +18,7 @@ def start
   input = STDIN.getch
   while( input != "q") do
     if(input != letters_arr[rand_letter_index])
+	streak_count = 0
         puts input     	
         puts "incorrect"
         puts letters_arr[rand_letter_index]
