@@ -4,4 +4,4 @@
 #### on the command line run:
 > ruby thai_trainer.rb
 
-
+#### calvin.settachatgul@gmail.com
