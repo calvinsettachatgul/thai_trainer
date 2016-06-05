@@ -40,7 +40,7 @@ def start
   end
 end
 
-p remaining_arr = print_letters(@remaining).split("")
+# p remaining_arr = print_letters(@remaining).split("")
 puts print_letters(@first_consonants)
 
 start
