@@ -18,12 +18,20 @@ def advance_letter_set
    return @all_consonants[ @level ]
 end
 
-def train(letter_set, streak_count)
+def train(letter_set)
+  add_interval = 10
+  train_streak_count = 0
   current_set = []
   current_letter_set = letter_set
-  rand_add = letter_set[rand(letter_set.length)]
-  current_letter_set.delete(rand_add)
-  current_set.push(rand_add)
+  while(letter_set.size > current_letter_set.size )
+    if(train_streak_count > 10)
+      rand_add = letter_set[rand(letter_set.length)]
+      current_letter_set.delete(rand_add)
+      current_set.push(rand_add)
+      train_streak_count = 0
+    end
+
+  end
 
 end
 
