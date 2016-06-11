@@ -14,7 +14,7 @@ end
 
 def advance_letter_set
 
-   return @all_letters[ ++level ]
+   return @all_consonants[ ++level ]
 
 end
 
@@ -23,7 +23,7 @@ end
 
 def start
   level = 0
-  letters_arr = print_letters(@all_letters[level]).split("")
+  letters_arr = print_letters(@all_consonants[level]).split("")
   rand_letter_index = rand(letters_arr.size)
   puts letters_arr[ rand_letter_index ]
   input = STDIN.getch
@@ -39,7 +39,7 @@ def start
             letters_arr = print_letters(advance_letter_set).split("")
           end
 	      puts input
-	      puts "correct streak:#{streak_count}"
+	      puts "correct streak:#{@streak_count}"
         rand_letter_index = rand(letters_arr.size)
         puts letters_arr[rand_letter_index]
     end
