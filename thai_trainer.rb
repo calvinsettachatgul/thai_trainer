@@ -1,4 +1,5 @@
 require 'io/console'
+@level = 0
 @streak_count = 0
 @first_consonants = "กขฃคฅฆงจฉชซ"
 @second_consonants = "ฌญฎฏฐฑฒณดตถ"
@@ -13,8 +14,8 @@ def print_letters(letter_set)
 end
 
 def advance_letter_set
-
-   return @all_consonants[ ++level ]
+    @level = @level + 1
+   return @all_consonants[ @level ]
 
 end
 
@@ -22,8 +23,8 @@ end
 
 
 def start
-  level = 0
-  letters_arr = print_letters(@all_consonants[level]).split("")
+
+  letters_arr = print_letters(@all_consonants[@level]).split("")
   rand_letter_index = rand(letters_arr.size)
   puts letters_arr[ rand_letter_index ]
   input = STDIN.getch
