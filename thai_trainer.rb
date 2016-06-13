@@ -35,7 +35,22 @@ def train(letter_set)
 
 end
 
-def query(ques, ans)
+def query(ques, ans, letters)
+
+    if(ans != ques)
+        @streak_count = 0
+        puts ans
+        puts "incorrect"
+    else
+        @streak_count += 1
+          if ( @streak_count > 19 )
+            letters = print_letters(advance_letter_set).split("")
+          end
+        puts input
+        puts "correct streak:#{@streak_count}"
+        rand_letter_index = rand(letters.size)
+        question = letters[rand_letter_index]
+    end
 
 end
 
@@ -49,20 +64,21 @@ def start
   input = STDIN.getch
   question = letters_arr[rand_letter_index]
   while( input != "q") do
-    if(input != question)
-        @streak_count = 0
-        puts input
-        puts "incorrect"
-    else
-        @streak_count += 1
-          if ( @streak_count > 19 )
-            letters_arr = print_letters(advance_letter_set).split("")
-          end
-	      puts input
-	      puts "correct streak:#{@streak_count}"
-        rand_letter_index = rand(letters_arr.size)
-        question = letters_arr[rand_letter_index]
-    end
+    # if(input != question)
+    #     @streak_count = 0
+    #     puts input
+    #     puts "incorrect"
+    # else
+    #     @streak_count += 1
+    #       if ( @streak_count > 19 )
+    #         letters_arr = print_letters(advance_letter_set).split("")
+    #       end
+	   #    puts input
+	   #    puts "correct streak:#{@streak_count}"
+    #     rand_letter_index = rand(letters_arr.size)
+    #     question = letters_arr[rand_letter_index]
+    # end
+    query( input, question, letters_arr)
     puts question
     input = STDIN.getch
   end
