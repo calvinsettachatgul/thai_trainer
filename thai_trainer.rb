@@ -43,13 +43,13 @@ def query(ques, ans, letters)
         puts "incorrect"
     else
         @streak_count += 1
-          if ( @streak_count > 19 )
-            letters = print_letters(advance_letter_set).split("")
+          if ( @streak_count > 1 )
+            puts "got a streak"
+            p new_letters = print_letters(advance_letter_set)
+            letters = new_letters.split("")
           end
-        puts input
+        puts ans
         puts "correct streak:#{@streak_count}"
-        rand_letter_index = rand(letters.size)
-        question = letters[rand_letter_index]
     end
 
 end
@@ -78,7 +78,11 @@ def start
     #     rand_letter_index = rand(letters_arr.size)
     #     question = letters_arr[rand_letter_index]
     # end
+    puts input
     query( question, input, letters_arr)
+    rand_letter_index = rand(letters_arr.size)
+    question = letters_arr[rand_letter_index]
+    letters_arr = print_letters(@all_consonants[@level]).split("")
     puts question
     input = STDIN.getch
   end
