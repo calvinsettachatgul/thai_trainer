@@ -16,9 +16,43 @@ end
 def advance_letter_set
     @level = @level + 1
    return @all_consonants[ @level ]
+end
+
+def train(letter_set)
+  add_interval = 10
+  train_streak_count = 0
+  current_set = []
+  current_letter_set = letter_set
+  while(letter_set.size > current_letter_set.size )
+    if(train_streak_count > 10)
+      rand_add = letter_set[rand(letter_set.length)]
+      current_letter_set.delete(rand_add)
+      current_set.push(rand_add)
+      train_streak_count = 0
+    end
+
+  end
 
 end
 
+def query(ques, ans, letters)
+
+    if(ans != ques)
+        @streak_count = 0
+        puts ans
+        puts "incorrect"
+    else
+        @streak_count += 1
+          if ( @streak_count > 1 )
+            puts "got a streak"
+            p new_letters = print_letters(advance_letter_set)
+            letters = new_letters.split("")
+          end
+        puts ans
+        puts "correct streak:#{@streak_count}"
+    end
+
+end
 
 
 
@@ -28,22 +62,28 @@ def start
   rand_letter_index = rand(letters_arr.size)
   puts letters_arr[ rand_letter_index ]
   input = STDIN.getch
+  question = letters_arr[rand_letter_index]
   while( input != "q") do
-    if(input != letters_arr[rand_letter_index])
-	      @streak_count = 0
-        puts input
-        puts "incorrect"
-        puts letters_arr[rand_letter_index]
-    else
-        @streak_count += 1
-          if ( @streak_count > 19 )
-            letters_arr = print_letters(advance_letter_set).split("")
-          end
-	      puts input
-	      puts "correct streak:#{@streak_count}"
-        rand_letter_index = rand(letters_arr.size)
-        puts letters_arr[rand_letter_index]
-    end
+    # if(input != question)
+    #     @streak_count = 0
+    #     puts input
+    #     puts "incorrect"
+    # else
+    #     @streak_count += 1
+    #       if ( @streak_count > 19 )
+    #         letters_arr = print_letters(advance_letter_set).split("")
+    #       end
+	   #    puts input
+	   #    puts "correct streak:#{@streak_count}"
+    #     rand_letter_index = rand(letters_arr.size)
+    #     question = letters_arr[rand_letter_index]
+    # end
+    puts input
+    query( question, input, letters_arr)
+    rand_letter_index = rand(letters_arr.size)
+    question = letters_arr[rand_letter_index]
+    letters_arr = print_letters(@all_consonants[@level]).split("")
+    puts question
     input = STDIN.getch
   end
 end
