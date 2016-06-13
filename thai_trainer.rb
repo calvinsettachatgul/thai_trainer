@@ -78,7 +78,7 @@ def start
     #     rand_letter_index = rand(letters_arr.size)
     #     question = letters_arr[rand_letter_index]
     # end
-    query( input, question, letters_arr)
+    query( question, input, letters_arr)
     puts question
     input = STDIN.getch
   end
